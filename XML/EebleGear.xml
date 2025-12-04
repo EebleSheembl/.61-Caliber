@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+
+  <Item name="eebletalentgiver" identifier="eebletalentgiver" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,chem,medical,syringe" allowasextracargo="true" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="Content/Items/Medical/Medicines.png" sourcerect="448,256,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="303,310,35,67" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="10.2" waterdragcoefficient="1"/>
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <StatusEffect type="OnUse" target="UseTarget">
+        <GiveTalentInfo giverandom="true" talentidentifiers="Eeble" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+  </Item>
+
+  <!--Pirate-->
+  <Item name="Eeble's Outfit" identifier="61caliberEebleRobes" category="Equipment" tags="smallitem,clothing,huskcult" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+    <Fabricate suitablefabricators="fabricator" requiredtime="5" requiresrecipe="true">
+      <RequiredItem identifier="zealotrobes" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="organicfiber" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/XML/EebleRobes/drooling.png" sourcerect="0,193,64,64" />
+    <Sprite texture="%ModDir%/XML/EebleRobes/drooling.png" sourcerect="76,184,123,72" depth="0.6" origin="0.5,0.5" />
+    <Body width="100" height="50" density="30" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="EebleRobes Torso" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="Torso" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Right Hand" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="RightHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Left Hand" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Right Upper Arm" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Left Upper Arm" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Right Lower Arm" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="RightForearm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Left Lower Arm" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Waist" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Right Thigh" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Left Thigh" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Right Leg" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Left Leg" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Left Shoe" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="LeftFoot" inheritlimbdepth="false" Depth="0.13" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Right Shoe" texture="%ModDir%/XML/EebleRobes/EebleRobes.png" limb="RightFoot" inheritlimbdepth="false" Depth="0.12" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleRobes Head" texture="Content/Items/Jobgear/headgears.png" limb="Head" hidelimb="true" inheritlimbdepth="false" Depth="0.55" sourcerect="394,537,118,130" inherittexturescale="true" origin="0.5,0.5" />
+      <damagemodifier afflictiontypes="burn" armorsector="0.0,360.0" damagemultiplier="0.9" />
+      <damagemodifier afflictionidentifiers="blunttrauma,lacerations,gunshotwound,bitewounds" armorsector="0.0,360.0" damagemultiplier="0.4" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="explosiondamage" armorsector="0.0,360.0" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.15" damagesound="LimbArmor" deflectprojectiles="true" />
+      <SkillModifier skillidentifier="weapons" skillvalue="5" />
+      <StatValue stattype="MovementSpeed" value="+0.05" />
+      <!--Physics-->
+      <StatusEffect type="OnWearing" target="Character" setvalue="true" disabledeltatime="true">
+        <triggeranimation type="walk" path="%ModDir%/XML/Eeble/Animations/EebleSheemblWalk.xml" />
+        <triggeranimation type="run" path="%ModDir%/XML/Eeble/Animations/EebleSheemblRun.xml" />
+        <triggeranimation type="crouch" path="%ModDir%/XML/Eeble/Animations/EebleSheemblCrouch.xml" />
+        <Affliction identifier="EebleRobePhysics" strength="100" />
+      </StatusEffect>
+      <StatusEffect target="Character" type="OnDeath">
+        <ReduceAffliction identifier="EebleRobePhysics" amount="100" />
+      </StatusEffect>
+      <!--Husk stuff-->
+      <StatusEffect type="OnWearing" target="Character" interval="0.5" disabledeltatime="true">
+        <Affliction identifier="disguisedashusk" amount="1.0" />
+        <!--<Affliction identifier="husksymbiosis" amount="100" />-->
+      </StatusEffect>
+      <StatusEffect target="Character" type="OnWearing" HideFace="true" setvalue="true"></StatusEffect>
+      <StatusEffect target="Character" type="OnWearing">
+        <Conditional huskinfection="gt 50" />
+        <ReduceAffliction type="damage" amount="0.5" />
+        <ReduceAffliction type="bleeding" amount="0.15" />
+      </StatusEffect>
+      <!--Container-->
+      <ItemContainer capacity="6" depth="0.5">
+        <SlotIcon slotindex="6" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="7" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="8" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <Containable items="smallitem,smallarmsammo" excludeditems="toolbelt,toolbox,uniform,mobilecontainer,rucksack,backpack,waistbelt" />
+        <SubContainer capacity="3">
+          <Containable items="handheldammo,grenade,handgrenade" excludeditems="storage_clothing,toolbelt,toolbox,bandolier,mediumitem" />
+        </SubContainer>
+      </ItemContainer>
+    </Wearable>
+  </Item>
+  <Item name="Eeble's Exoskeleton" identifier="EebleExo" category="Diving,Equipment" tags="diving,deepdiving,human,mediumitem" scale="0.5" fireproof="true" description="" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="2" cargocontaineridentifier="">
+    <Deconstruct time="30">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="rubber" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="45">
+      <RequiredSkill identifier="mechanical" level="60" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="ballisticfiber" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <InventoryIcon name="EebleExoIcon" texture="%ModDir%/Sprites/EebleExo.png" sourcerect="449,193,64,64" origin="0.5,0.5" />
+    <Sprite name="EebleExoGround" texture="%ModDir%/Sprites/EebleExo.png" sourcerect="409,0,103,132" depth="0.55" origin="0.5,0.5" />
+    <Body radius="45" width="34" density="20" />
+    <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Eeble Exo Torso" texture="%ModDir%/Sprites/EebleExo.png" limb="Torso" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Eeble Exo Right Upper Arm" texture="%ModDir%/Sprites/EebleExo.png" limb="RightArm" depthlimb="RightForearm" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Eeble Exo Left Upper Arm" texture="%ModDir%/Sprites/EebleExo.png" limb="LeftArm" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Eeble Exo Right Lower Arm" texture="%ModDir%/Sprites/EebleExo.png" limb="RightForearm" depthlimb="RightArm" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Eeble Exo Left Lower Arm" texture="%ModDir%/Sprites/EebleExo.png" limb="LeftForearm" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Eeble Exo Waist" texture="%ModDir%/Sprites/EebleExo.png" limb="Waist" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Eeble Exo Right Thigh" texture="%ModDir%/Sprites/EebleExo.png" limb="RightThigh" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Eeble Exo Left Thigh" texture="%ModDir%/Sprites/EebleExo.png" limb="LeftThigh" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Eeble Exo Right Leg" texture="%ModDir%/Sprites/EebleExo.png" limb="RightLeg" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Eeble Exo Left Leg" texture="%ModDir%/Sprites/EebleExo.png" limb="LeftLeg" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Exosuit Left Shoe" texture="%ModDir%/Sprites/EebleExo.png" limb="LeftFoot" sound="footstep_armor_heavy" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Exosuit Right Shoe" texture="%ModDir%/Sprites/EebleExo.png" limb="RightFoot" sound="footstep_armor_heavy" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,stun" damagemultiplier="0.75" damagesound="LimbArmor" deflectprojectiles="true" />
+      <StatValue stattype="WalkingSpeed" value="0.3" />
+      <StatValue stattype="SwimmingSpeed" value="0.2" />
+      <StatValue stattype="PropulsionSpeed" value="0.25" />
+      <StatValue stattype="MeleeAttackMultiplier" value="0.2" />
+      <StatusEffect type="OnWearing" target="Character" interval="0.9" disabledeltatime="true">
+        <Affliction identifier="recoilstabilized" amount="1" />
+      </StatusEffect>
+      <sound file="Content/Items/Weapons/WEAPONS_chargeUp.ogg" type="OnWearing" range="350.0" volumeproperty="Speed" volume="0.01" loop="true" frequencymultiplier="0.5" />
+    </Wearable>
+  </Item>
+  <Item name="Eeble's Hat" identifier="EebleHat" category="Equipment" tags="smallitem,clothing," impactsoundtag="impact_metal_heavy" scale="0.4" cargocontaineridentifier="metalcrate">
+    <Price baseprice="175" sold="false" />
+    <Deconstruct time="10" />
+    <Sprite texture="Content/Items/Jobgear/headgears.png" sourcerect="203,418,89,46" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="15" />
+    <Turret HudTint="60,100,60,90" drawhudwhenequipped="true">
+      <StatusEffect type="OnActive" target="this" HudTint="0,0,0,0" disabledeltatime="true" setvalue="true">
+        <Conditional hasstatustag="neq powered" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="this" HudTint="60,100,60,90" disabledeltatime="true" setvalue="true">
+        <Conditional hasstatustag="powered" />
+      </StatusEffect>
+    </Turret>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+      <Containable items="mobilebattery" />
+      <!--	<SlotIcon slotindex="0" texture="Content/UI/WeaponUI.png" sourcerect="64,961,32,22" origin="0.5,0.45" /> -->
+    </ItemContainer>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,98" style="ItemUI" />
+      <TickBox text="On/Off">
+        <StatusEffect type="OnUse" target="This" tags="powered" duration="0.2">
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+      </TickBox>
+    </CustomInterface>
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictionidentifiers="blunttrauma,lacerations,bitewounds" armorsector="0.0,360.0" damagemultiplier="0.9" />
+      <sprite texture="%ModDir%/Sprites/Sprites.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.8" sourcerect="228,0,89,90" origin="0.55,0.6" />
+      <SkillModifier skillidentifier="helm" skillvalue="12" />
+      <StatusEffect type="OnWearing" target="Character" HideFace="false" duration="0.1" stackable="false" />
+      <LightComponent LightColor="100,100,100,180" range="2000" IsOn="true" castshadows="true" powerconsumption="1">
+        <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+        <StatusEffect type="OnWearing" target="This" Voltage="1.0" setvalue="true" comparison="AND">
+          <Conditional IsDead="false" targetcontainer="true" />
+          <Conditional hasstatustag="powered" />
+          <Conditional IsLocalPlayer="true" targetcontainer="true" />
+        </StatusEffect>
+      </LightComponent>
+    </Wearable>
+    <StatusHUD drawhudwhenequipped="true" overlaycolor="90,90,90,120" range="3000" thermalgoggles="true" showdeadcharacters="false" showtexts="false" />
+  </Item>
+  <Item name="Eeble's Juggernaut Suit" identifier="EebleJugg" category="Diving,Equipment" tags="diving,deepdiving,human,mediumitem" scale="0.5" fireproof="true" description="" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="2" cargocontaineridentifier="">
+    <Deconstruct time="30">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="rubber" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="45">
+      <RequiredSkill identifier="mechanical" level="60" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="ballisticfiber" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <InventoryIcon name="EebleJuggIcon" texture="%ModDir%/Sprites/EebleJugg.png" sourcerect="413,0,99,76" origin="0.5,0.5" />
+    <Sprite name="EebleJuggGround" texture="%ModDir%/Sprites/Sprites.png" sourcerect="362,0,150,168" depth="0.55" origin="0.5,0.5" />
+    <Body radius="45" width="34" density="55" />
+    <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="EebleJugg Exo Torso" texture="%ModDir%/Sprites/EebleJugg.png" limb="Torso" hidelimb="false" inherittexturescale="false" scale="0.55" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Right Hand" texture="%ModDir%/Sprites/EebleJugg.png" limb="RightHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Left Hand" texture="%ModDir%/Sprites/EebleJugg.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Exo Right Upper Arm" texture="%ModDir%/Sprites/EebleJugg.png" limb="RightArm" depthlimb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Exo Left Upper Arm" texture="%ModDir%/Sprites/EebleJugg.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Exo Right Lower Arm" texture="%ModDir%/Sprites/EebleJugg.png" limb="RightForearm" depthlimb="RightArm" hidelimb="true" inherittexturescale="false" scale="0.55" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Exo Left Lower Arm" texture="%ModDir%/Sprites/EebleJugg.png" limb="LeftForearm" hidelimb="true" inherittexturescale="false" scale="0.55" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Exo Waist" texture="%ModDir%/Sprites/EebleJugg.png" limb="Waist" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Exo Right Thigh" texture="%ModDir%/Sprites/EebleJugg.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Exo Left Thigh" texture="%ModDir%/Sprites/EebleJugg.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Exo Right Leg" texture="%ModDir%/Sprites/EebleJugg.png" limb="RightLeg" hidelimb="true" inherittexturescale="false" scale="0.55" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Exo Left Leg" texture="%ModDir%/Sprites/EebleJugg.png" limb="LeftLeg" hidelimb="true" inherittexturescale="false" scale="0.55" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Left Shoe" texture="%ModDir%/Sprites/EebleJugg.png" limb="LeftFoot" sound="StructureBlunt" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleJugg Right Shoe" texture="%ModDir%/Sprites/EebleJugg.png" limb="RightFoot" sound="StructureBlunt" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,gunshotwound,lacerations,explosiondamage" damagemultiplier="0.3" probabilitymultiplier="0.9" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds, bleeding" damagemultiplier="0.25" probabilitymultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="stun" damagemultiplier="0.95" probabilitymultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.7" damagesound="" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.3" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.3" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="EebleRobePhysics" damagemultiplier="1" probabilitymultiplier="0.0" damagesound="LimbArmor" />
+      <StatValue stattype="WalkingSpeed" value="-0.2" />
+      <StatValue stattype="SwimmingSpeed" value="-0.3" />
+      <StatValue stattype="MeleeAttackMultiplier" value="0.5" />
+      <StatusEffect type="OnWearing" target="Character" interval="0.9" disabledeltatime="true">
+        <Affliction identifier="recoilstabilized" amount="1" />
+      </StatusEffect>
+      <sound file="Content/Items/Weapons/WEAPONS_chargeUp.ogg" type="OnWearing" range="350.0" volumeproperty="Speed" volume="0.5" loop="true" frequencymultiplier="0.5" />
+    </Wearable>
+  </Item>
+  <Item name="Eeble's Helmet" identifier="EebleHelm" category="Equipment" tags="smallitem,clothing," impactsoundtag="impact_metal_heavy" scale="0.4" cargocontaineridentifier="metalcrate">
+    <Price baseprice="175" sold="false" />
+    <Deconstruct time="10" />
+    <Sprite texture="%ModDir%/Sprites/Sprites.png" sourcerect="384,191,103,108" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="15" />
+    <Turret HudTint="60,100,60,90" drawhudwhenequipped="true">
+      <StatusEffect type="OnActive" target="this" HudTint="0,0,0,0" disabledeltatime="true" setvalue="true">
+        <Conditional hasstatustag="neq powered" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="this" HudTint="60,100,60,90" disabledeltatime="true" setvalue="true">
+        <Conditional hasstatustag="powered" />
+      </StatusEffect>
+    </Turret>
+    <Turret HudTint="10,10,10,255" drawhudwhenequipped="true">
+      <StatusEffect type="OnActive" target="this" HudTint="0,0,0,0" disabledeltatime="true" setvalue="true">
+        <Conditional hasstatustag="neq powered" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="this" HudTint="60,100,60,90" disabledeltatime="true" setvalue="true">
+        <Conditional hasstatustag="powered" />
+      </StatusEffect>
+    </Turret>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+      <Containable items="mobilebattery" />
+      <!--	<SlotIcon slotindex="0" texture="Content/UI/WeaponUI.png" sourcerect="64,961,32,22" origin="0.5,0.45" />   hidewearablesoftype="Hair" -->
+    </ItemContainer>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,98" style="ItemUI" />
+      <TickBox text="On/Off">
+        <StatusEffect type="OnUse" target="This" tags="powered" duration="0.2">
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+      </TickBox>
+    </CustomInterface>
+    <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,gunshotwound,lacerations,explosiondamage" damagemultiplier="0.45" probabilitymultiplier="0.9" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds, bleeding" damagemultiplier="0.25" probabilitymultiplier="0.65" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="stun" damagemultiplier="0.95" probabilitymultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.7" damagesound="" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.2" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.3" damagesound="LimbArmor" />
+      <sprite texture="%ModDir%/Sprites/Sprites.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.55" sourcerect="384,191,103,108" origin="0.5,0.5" />
+      <SkillModifier skillidentifier="helm" skillvalue="12" />
+      <StatusEffect type="OnWearing" target="Character" HideFace="false" duration="0.1" stackable="false" />
+      <LightComponent LightColor="100,100,100,180" range="2000" IsOn="true" castshadows="true" powerconsumption="1">
+        <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+        <StatusEffect type="OnWearing" target="This" Voltage="1.0" setvalue="true" comparison="AND">
+          <Conditional IsDead="false" targetcontainer="true" />
+          <Conditional hasstatustag="powered" />
+          <Conditional IsLocalPlayer="true" targetcontainer="true" />
+        </StatusEffect>
+      </LightComponent>
+    </Wearable>
+    <StatusHUD drawhudwhenequipped="true" overlaycolor="90,90,90,120" range="3000" thermalgoggles="true" showdeadcharacters="false" showtexts="false" />
+  </Item>
+  <!--Seppie-->
+  <Item name="Eeble's Seppie Outfit" identifier="eebleseppie" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,clothing,separatists" scale="0.5" fireproof="true" waterproof="true" impactsoundtag="impact_soft">
+    <Price baseprice="300" sold="false" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="5" requiresrecipe="true">
+      <RequiredItem identifier="orangejumpsuit2" />
+      <RequiredItem identifier="separatistcommoner3" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="organicfiber" />
+    </Deconstruct>
+    <InventoryIcon name="EebleSeppieIcon" texture="%ModDir%/Sprites/InventoryIcons.png" sourcerect="0,64,64,64" origin="0.5,0.5" />
+    <Sprite name="EebleSeppie" texture="%ModDir%/Sprites/Sprites.png" sourcerect="130,149,118,71" depth="0.6" origin="0.5,0.5" />
+    <Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="EebleSeppie Uniform 3 Torso" texture="%ModDir%/Sprites/EebleSeppie.png" limb="Torso" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Right Hand" texture="%ModDir%/Sprites/EebleSeppie.png" limb="RightHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Left Hand" texture="%ModDir%/Sprites/EebleSeppie.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Right Lower Arm" texture="%ModDir%/Sprites/EebleSeppie.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Left Lower Arm" texture="%ModDir%/Sprites/EebleSeppie.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Right Upper Arm" texture="%ModDir%/Sprites/EebleSeppie.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Left Upper Arm" texture="%ModDir%/Sprites/EebleSeppie.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Waist" texture="%ModDir%/Sprites/EebleSeppie.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Right Thigh" texture="%ModDir%/Sprites/EebleSeppie.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Left Thigh" texture="%ModDir%/Sprites/EebleSeppie.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Right Leg" texture="%ModDir%/Sprites/EebleSeppie.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Left Leg" texture="%ModDir%/Sprites/EebleSeppie.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Left Shoe" texture="%ModDir%/Sprites/EebleSeppie.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="EebleSeppie Uniform 3 Right Shoe" texture="%ModDir%/Sprites/EebleSeppie.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite texture="Content/Items/Jobgear/headgears.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.8" sourcerect="313,407,100,95" origin="0.55,0.6" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma" damagemultiplier="0.80" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="burns" damagemultiplier="0.75" probabilitymultiplier="0.50" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound,lacerations" damagemultiplier="0.80" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="Slow" damagemultiplier="0.00" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="Burning" damagemultiplier="0.50" />
+      <StatValue stattype="RangedAttackSpeed" value="0.15" />
+      <StatValue stattype="RangedSpreadReduction" value="10" />
+      <StatValue stattype="WeaponsSkillBonus" value="10" />
+      <StatusEffect type="OnWearing" target="Character" setvalue="true" disabledeltatime="true">
+        <triggeranimation type="crouch" path="%ModDir%/XML/Eeble/Animations/EebleSheemblCrouch.xml" />
+      </StatusEffect>
+    </Wearable>
+    <ItemContainer capacity="2" maxstacksize="4">
+      <Containable items="weldingtoolfuel,oxygensource,chemfuel" hide="True" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+
+      <SubContainer capacity="4" maxstacksize="8">
+        <Containable items="smallitem" hide="True" />
+      </SubContainer>
+    </ItemContainer>
+  </Item>
+</Items>

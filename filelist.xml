@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name=".61 Caliber" modversion="1.0.31" corepackage="False" steamworkshopid="3391431168" gameversion="1.10.7.2">
+  <Item file="%ModDir%/XML/Items.xml" />
+  <Item file="%ModDir%/XML/Overrides.xml" />
+  <Item file="%ModDir%/XML/Experimental.xml" />
+  <Item file="%ModDir%/XML/EebleGear.xml" />
+  <Afflictions file="%ModDir%/XML/EebleRobes/Afflictions.xml" />
+  <Afflictions file="%ModDir%/XML/SlamSuit/Afflictions.xml" />
+  <Afflictions file="%ModDir%/XML/Zipline/Afflictions.xml" />
+  <Character file="%ModDir%/XML/EebleRobes/Robe Physics/HumanEebleRobePhysics.xml" />
+  <Character file="%ModDir%/XML/SlamSuit/SlamSuitPhysics/HumanSlamSuitPhysics.xml" />
+  <Character file="%ModDir%/skibidi/therizzler.xml" />
+  <Character file="%ModDir%/XML/EebleChimera/EebleChimera.xml" />
+  <Character file="%ModDir%/XML/Eeble/EebleSheembl.xml" />
+  <Talents file="%ModDir%/XML/OverridesTalents.xml" />
+  <NPCSets file="%ModDir%/XML/NPCs.xml" />
+  <RandomEvents file="%ModDir%/XML/Events.xml" />
+  <Text file="%ModDir%/XML/Texts.xml" />
+  <Particles file="%ModDir%/XML/Particles.xml" />
+  <Submarine file="%ModDir%/the test.sub" />
+  <Jobs file="%ModDir%/XML/Jobs.xml" />
+  <TalentTrees file="%ModDir%/XML/talenttrees.xml" />
+</contentpackage>

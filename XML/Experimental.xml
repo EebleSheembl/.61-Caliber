@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Malicious Sphere" identifier="malicioussphere" tags="smallitem" category="Alien" subcategory="devices" linkable="true" scale="0.050">
+    <Body radius="175" bodytype="Static" />
+    <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" depth="0.84" sourcerect="21,1367,395,395" origin="0.5,0.5" />
+    <Holdable slots="Any,RightHand,LeftHand" aimable="false" aimpos="45,14" handle1="0,0" swingamount="10,10" swingspeed="10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+      <LightComponent range="600" lightcolor="140,197,180,111" IsOn="true" castshadows="true" allowingameediting="false" flicker="0.2" flickerspeed="5.0" pulsefrequency="0.2" pulseamount="0.4">
+        <sprite texture="Content/Items/Alien/AlienRuins_Items.png" sourcerect="1075,1367,395,395" origin="0.5,0.5" />
+        <StatusEffect type="OnActive" target="This">
+          <sound file="Content/Items/Alien/ALIEN_gravitySphereLoop.ogg" range="800.0" loop="true" dontmuffle="true" />
+        </StatusEffect>
+      </LightComponent>
+      <StatusEffect type="OnSecondaryUse" target="NearbyItems" Range="100">
+        <Use />
+        <Activate />
+      </StatusEffect>
+      <TriggerComponent triggeredby="Item" force="350" radius="500" distancebasedforce="true">
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="gravityspherefx" particleamount="1" emitinterval="2" />
+        </StatusEffect>
+      </TriggerComponent>
+      <!--Start damaging entities at range 500-->
+      <TriggerComponent triggeredby="Human, Item" force="45" radius="500">
+        <Upgrade gameversion="1.6.4.0" force="45" />
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="gravityspherefx2" particlespersecond="3" />
+          <ParticleEmitter particle="skyholderfx2" anglemax="360" distancemin="400" distancemax="500" velocitymin="-500" velocitymax="-900" particlespersecond="200" colormultiplier="255,180,255,255" />
+        </StatusEffect>
+      </TriggerComponent>
+      <!--Heavily damage entities close to the center-->
+      <TriggerComponent triggeredby="Human, Item" force="25" radius="100">
+        <Upgrade gameversion="1.6.4.0" force="25" />
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="gravityspherefx2" particlespersecond="5" scalemin="0.7" scalemax="0.7" />
+          <ParticleEmitter particle="skyholderfx2" anglemax="360" distancemin="300" distancemax="400" velocitymin="-700" velocitymax="-1200" particlespersecond="100" colormultiplier="255,180,255,255" />
+        </StatusEffect>
+      </TriggerComponent>
+    </Holdable>
+  </Item>
+  <Item name="Reversed Sphere" identifier="reversedsphere" tags="smallitem" category="Alien" subcategory="devices" linkable="true" scale="0.050">
+    <Body radius="175" bodytype="Static" />
+    <Sprite texture="%ModDir%/Sprites/AlienRuins_Items.png" depth="0.84" sourcerect="0,0,395,395" origin="0.5,0.5" />
+    <Holdable slots="Any,RightHand,LeftHand" aimable="false" aimpos="45,14" handle1="0,0" swingamount="10,10" swingspeed="10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+      <LightComponent range="600" lightcolor="10,197,10,111" IsOn="true" castshadows="true" allowingameediting="false" flicker="0.2" flickerspeed="5.0" pulsefrequency="0.2" pulseamount="0.4">
+        <sprite texture="Content/Items/Alien/AlienRuins_Items.png" sourcerect="1075,1367,395,395" origin="0.5,0.5" />
+        <StatusEffect type="OnActive" target="This">
+          <sound file="Content/Items/Alien/ALIEN_gravitySphereLoop.ogg" range="800.0" loop="true" dontmuffle="true" />
+        </StatusEffect>
+      </LightComponent>
+      <StatusEffect type="OnSecondaryUse" target="NearbyItems" Range="100">
+        <explosion force="-100" range="100" showEffects="false" />
+      </StatusEffect>
+      <TriggerComponent triggeredby="Item" force="-400" radius="500" distancebasedforce="true">
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="greengravityspherefx" particleamount="1" emitinterval="2" />
+        </StatusEffect>
+      </TriggerComponent>
+      <!--Start damaging entities at range 500-->
+      <TriggerComponent triggeredby="Human, Item" force="-45" radius="500">
+        <Upgrade gameversion="1.6.4.0" force="-45" />
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="greengravityspherefx2" particlespersecond="3" />
+          <ParticleEmitter particle="skyholderfx2" anglemax="360" distancemin="400" distancemax="500" velocitymin="-500" velocitymax="-900" particlespersecond="200" colormultiplier="255,180,255,255" />
+        </StatusEffect>
+      </TriggerComponent>
+      <!--Heavily damage entities close to the center-->
+      <TriggerComponent triggeredby="Human, Item" force="-25" radius="100">
+        <Upgrade gameversion="1.6.4.0" force="-25" />
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="greengravityspherefx2" particlespersecond="5" scalemin="0.7" scalemax="0.7" />
+          <ParticleEmitter particle="skyholderfx2" anglemax="360" distancemin="300" distancemax="400" velocitymin="-700" velocitymax="-1200" particlespersecond="100" colormultiplier="255,180,255,255" />
+        </StatusEffect>
+      </TriggerComponent>
+    </Holdable>
+  </Item>
+  <Item name="Eeble's SlamSuit" identifier="EebleSlamSuit" category="Diving,Equipment" tags="diving,deepdiving,human,mediumitem" scale="0.5" fireproof="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="2">
+    <Deconstruct time="30">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="rubber" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiresrecipe="true" requiredtime="45">
+      <RequiredSkill identifier="mechanical" level="60" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="ballisticfiber" amount="2" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
+      <RequiredItem identifier="rubber" amount="2" />
+      <RequiredItem identifier="exosuit" />
+    </Fabricate>
+    <InventoryIcon name="EebleSlamSuitIcon" texture="%ModDir%/Sprites/SlamSuit2.png" sourcerect="382,398,131,115" origin="0.5,0.5" />
+    <Sprite name="EebleSlamSuitGround" texture="%ModDir%/Sprites/Sprites.png" sourcerect="229,298,241,214" depth="0.55" origin="0.5,0.5" />
+    <Body radius="45" width="34" density="55" />
+    <Wearable slots="OuterClothes+RightHand+LeftHand" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="SlamSuit2 Head" texture="%ModDir%/Sprites/SlamSuit2.png" limb="Head" scale="1" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="false" origin="0.5,0.8" inheritlimbdepth="false" depth="0.07" inheritsourcerect="false" sourcerect="0,0,10,10" />
+      <sprite name="SlamSuit2 Torso" texture="%ModDir%/Sprites/SlamSuit2.png" limb="Torso" scale="1.2" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.8" inheritlimbdepth="true" inheritsourcerect="false" sourcerect="167,1,203,193" />
+      <sprite name="SlamSuit2 Right Hand" texture="%ModDir%/Sprites/SlamSuit2.png" limb="RightHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" inheritlimbdepth="true" sourcerect="318,272,68,78" origin="0.5029412,0.39358976" />
+      <sprite name="SlamSuit2 Left Hand" texture="%ModDir%/Sprites/SlamSuit2.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" sourcerect="318,272,68,78" origin="0.5029412,0.39358976" />
+      <sprite name="SlamSuit2 Right Upper Arm" texture="%ModDir%/Sprites/SlamSuit2.png" limb="RightArm" depthlimb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="383,0,64,96" sourcerect="383,0,64,96" origin="0.5,0.5" />
+      <sprite name="SlamSuit2 Left Upper Arm" texture="%ModDir%/Sprites/SlamSuit2.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" SourceRect="447,0,64,96" sourcerect="447,0,64,96" origin="0.5,0.5" />
+      <sprite name="SlamSuit2 Right Forearm" texture="%ModDir%/Sprites/SlamSuit2.png" limb="RightForearm" depthlimb="RightArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="383,96,64,64" sourcerect="383,96,64,64" origin="0.5,0.5" />
+      <sprite name="SlamSuit2 Left Forearm" texture="%ModDir%/Sprites/SlamSuit2.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" SourceRect="447,96,64,64" sourcerect="447,96,64,64" origin="0.5,0.5" />
+      <sprite name="SlamSuit2 Waist" texture="%ModDir%/Sprites/SlamSuit2.png" limb="Waist" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" inheritlimbdepth="true" sourcerect="182,196,178,53" />
+      <sprite name="SlamSuit2 Right Thigh" texture="%ModDir%/Sprites/SlamSuit2.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" inheritlimbdepth="true" sourcerect="0,0,96,112" />
+      <sprite name="SlamSuit2 Left Thigh" texture="%ModDir%/Sprites/SlamSuit2.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="0,0,96,112" />
+      <sprite name="SlamSuit2 Right Leg" texture="%ModDir%/Sprites/SlamSuit2.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritlimbdepth="true" inheritsourcerect="true" sourcerect="0,0,512,512" origin="0.5,0.5" />
+      <sprite name="SlamSuit2 Left Leg" texture="%ModDir%/Sprites/SlamSuit2.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,512,512" origin="0.5,0.5" />
+      <sprite name="SlamSuit2 Left Shoe" texture="%ModDir%/Sprites/SlamSuit2.png" limb="LeftFoot" sound="StructureBlunt" volume="0.8" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.2,0.5" inheritsourcerect="false" sourcerect="371,211,133,37" />
+      <sprite name="SlamSuit2 Right Shoe" texture="%ModDir%/Sprites/SlamSuit2.png" limb="RightFoot" sound="StructureBlunt" volume="0.8" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.2,0.5" inheritsourcerect="false" sourcerect="371,211,133,37" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,gunshotwound,lacerations,explosiondamage" damagemultiplier="0.3" probabilitymultiplier="0.9" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds, bleeding" damagemultiplier="0.25" probabilitymultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="stun" damagemultiplier="0.95" probabilitymultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.7" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.3" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.3" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="EebleRobePhysics,stun" damagemultiplier="1" probabilitymultiplier="0.0" damagesound="LimbArmor" />
+      <StatValue stattype="MeleeAttackMultiplier" value="1" />
+      <StatValue stattype="FlowResistance" value="1" />
+      <StatusEffect type="OnWearing" target="Character" interval="0.9" disabledeltatime="true">
+        <Affliction identifier="recoilstabilized" amount="1" />
+      </StatusEffect>
+      <!--Physics-->
+      <StatusEffect type="OnWearing" target="Character" setvalue="true" disabledeltatime="true">
+        <TriggerAnimation Type="Walk" FileName="HumanWalkExosuit" priority="10" ExpectedSpecies="Human" />
+        <TriggerAnimation Type="Run" FileName="HumanRunExosuit" priority="10" ExpectedSpecies="Human" />
+        <Affliction identifier="SlamSuitPhysics" strength="100" />
+      </StatusEffect>
+      <StatusEffect target="Character" type="OnDeath">
+        <ReduceAffliction identifier="SlamSuitPhysics" amount="100" />
+      </StatusEffect>
+      <sound file="Content/Items/Weapons/WEAPONS_chargeUp.ogg" type="OnWearing" range="350.0" volumeproperty="Speed" volume="0.5" loop="true" frequencymultiplier="0.5" />
+    </Wearable>
+    <Holdable slots="OuterClothes+RightHand+LeftHand" controlpose="false" handle1="15,20" handle2="-25,-12" aimpos="40,10" />
+    <MeleeWeapon slots="OuterClothes+RightHand+LeftHand" reload="0.5" range="60" combatPriority="25" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="10000" TargetForce="10000" severlimbsprobability="15" ballastfloradamage="30" itemdamage="18" structuredamage="10" structuresoundtype="StructureSlash" penetration="0.6">
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="20" />
+        <Affliction identifier="bleeding" strength="15" probability="0.2" />
+        <Affliction identifier="lacerations" strength="20" probability="0.2" />
+        <Affliction identifier="explosiondamage" strength="5.5" probability="0.35" />
+        <Affliction identifier="incrementalstun" strength="15" />
+        <Affliction identifier="stun" strength="0.8" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="0.7" volume="3" selectionmode="random" range="500" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="0.75" volume="3" range="500" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" frequencymultiplier="0.65" volume="3" range="500" />
+        </StatusEffect>
+      </Attack>
+      <StatusEffect type="OnUse" target="Limb">
+        <Affliction identifier="blunttrauma" strength="30" />
+        <Affliction identifier="blunttrauma" strength="15" probability="0.1" />
+        <Affliction identifier="explosiondamage" strength="10" />
+        <Affliction identifier="explosiondamage" strength="15" probability="0.1" />
+        <Affliction identifier="incrementalstun" strength="10" />
+        <Affliction identifier="stun" strength="0.8" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot2.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot3.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot4.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot5.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot6.ogg" type="OnUse" range="3000" />
+        <Explosion range="5.0" force="10000" shockwave="true" flames="false" smoke="false" underwaterbubble="true" camerashake="100" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget" comparison="and">
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="shrapnel" particleamount="10" velocitymin="50" velocitymax="150" anglemin="-30" anglemax="30" scalemin="0.2" scalemax="0.6" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </MeleeWeapon>
+  </Item>
+  <!--Le Corpe Testing-->
+  <Item name="Trickster's Rig" identifier="tricksterrig" category="Equipment" tags="smallitem,clothing,stealthitem,huskcult" fireproof="false" noninteractable="true" cargocontaineridentifier="metalcrate" description="Modified Inquisitors robes from a bandits lucky kill" scale="0.5" impactsoundtag="impact_soft">
+    <InventoryIcon texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="409,2,63,45" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Jobgear/MiscJobGear.png" sourcerect="383,359,117,65" depth="0.6" origin="0.5,0.5" />
+    <Body width="100" height="50" density="30" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" variants="1" msg="ItemMsgPickUpSelect">
+      <sprite name="Trickster Torso" texture="%ModDir%/Sprites/tricksterrig.png" limb="Torso" hidelimb="true" hideotherwearables="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,512,256" origin="0.5,0.5" />
+      <sprite name="Trickster Right Hand" texture="%ModDir%/Sprites/tricksterrig.png" limb="RightHand" hideotherwearables="false" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      <sprite name="Trickster Left Hand" texture="%ModDir%/Sprites/tricksterrig.png" limb="LeftHand" hideotherwearables="false" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      <sprite name="Trickster Right Lower Arm" texture="%ModDir%/Sprites/tricksterrig.png" limb="RightArm" hideotherwearables="false" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      <sprite name="Trickster Left Lower Arm" texture="%ModDir%/Sprites/tricksterrig.png" limb="LeftArm" hideotherwearables="false" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      <sprite name="Trickster Right Upper Arm" texture="%ModDir%/Sprites/tricksterrig.png" limb="RightForearm" hideotherwearables="false" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      <sprite name="Trickster Left Upper Arm" texture="%ModDir%/Sprites/tricksterrig.png" limb="LeftForearm" hideotherwearables="false" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      <sprite name="Trickster Waist" texture="%ModDir%/Sprites/tricksterrig.png" limb="Waist" hidelimb="true" hideotherwearables="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      <sprite name="Trickster Right Thigh" texture="%ModDir%/Sprites/tricksterrig.png" limb="RightThigh" hideotherwearables="false" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,512,256" origin="0.5,0.5" />
+      <sprite name="Trickster Left Thigh" texture="%ModDir%/Sprites/tricksterrig.png" limb="LeftThigh" hideotherwearables="false" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      <sprite name="Trickster Right Leg" texture="%ModDir%/Sprites/tricksterrig.png" limb="RightLeg" hideotherwearables="false" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      <sprite name="Trickster Left Leg" texture="%ModDir%/Sprites/tricksterrig.png" limb="LeftLeg" hideotherwearables="false" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      <sprite name="Trickster Left Shoe" texture="%ModDir%/Sprites/tricksterrig.png" limb="LeftFoot" hideotherwearables="false" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      <sprite name="Trickster Right Shoe" texture="%ModDir%/Sprites/tricksterrig.png" limb="RightFoot" hideotherwearables="false" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,0,0" origin="0.5,0.5" />
+      <sprite name="Trickster Head" texture="%ModDir%/Sprites/tricksterrig.png" limb="Head" hidelimb="true" hidewearablesoftype="Hair,Moustache,Beard" hideotherwearables="true" inheritlimbdepth="true" scale="0.3" SourceRect=" 400,-15,128,128" origin="0.55,0.5" sourcerect="400,-15,128,128" />
+      
+       <StatusEffect target="character" type="OnDeath" >
+       <Remove/>
+       </StatusEffect>
+
+      <StatusEffect target="Character" type="OnWearing">
+        <Conditional cultistmarker="gt 0" />
+        <ReduceAffliction type="damage" amount="0.5" />
+        <ReduceAffliction type="bleeding" amount="1" />
+      </StatusEffect>
+      <StatusEffect target="Character,This" type="Always" Comparison="And">
+        <Conditional CurrentSpeed="lte 1.0" />
+        <!--walkspeed is 1.7, runspeed is 3.0 -->
+        <Conditional cultistmarker="gt 0" />
+        <Conditional Vitality="gt 0" />
+        <Affliction identifier="concealed" strength="2.1" />
+      </StatusEffect>
+      <StatusEffect target="Character,This" type="Always" Comparison="Or">
+        <Conditional CurrentSpeed="gt 2.7" />
+        <!--walkspeed is 1.7, runspeed is 3.0 -->
+        <Conditional Vitality="lte 0" />
+        <Affliction identifier="concealed" strength="-1.6" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" SpriteColor="255,255,255,255" />
+
+    <StatusEffect type="Always" target="This" delay="5" targetitemcomponent="ItemContainer" >
+      <Spawnitem identifier="tricksternade" spawnposition="ThisInventory" />
+    </StatusEffect>
+    </Wearable>
+
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedspritedepth="0.56">
+        <Containable items="tricksternade" />
+    </ItemContainer>
+  </Item>
+
+  <Item name="Trickster's Bandolier" identifier="trickstersbandolier" category="Equipment" tags="mediumitem,clothing,mobilecontainer" scale="0.4" cargocontaineridentifier="metalcrate" allowasextracargo="true" description="" impactsoundtag="impact_soft">
+    <PreferredContainer primary="armcab" secondary="secarmcab" />
+    <Price baseprice="250" sold="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="separatists" min="50" />
+      </Price>
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" maxavailable="3" sold="true">
+        <Reputation faction="separatists" min="50" />
+      </Price>
+      <Price storeidentifier="merchantresearch" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+      <Price storeidentifier="merchantmine" />
+    </Price>
+    <Deconstruct time="30">
+      <Item identifier="ballisticfiber" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="25" requiresrecipe="true">
+      <RequiredSkill identifier="weapons" level="35" />
+      <RequiredItem identifier="ballisticfiber" amount="2" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Sprites/tricksterrig.png" sourcerect="26,64,70,95" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Sprites/tricksterrig.png" sourcerect="98,20,89,137" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" height="30" density="15" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Security Vest" texture="%ModDir%/JobGear/TalentGear.png" limb="Torso" hidelimb="false" sourcerect="98,20,89,137" inherittexturescale="true" scale="0.9" origin="0.43,0.55" />
+    </Wearable>
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="0,0-30" handle2="0,-30" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" allowswappingwhenpicked="false" />
+    <ItemContainer capacity="8" maxstacksize="12" />
+  </Item>
+
+  <Item name="Tricksters Husk Grenade" identifier="tricksternade" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert,handgrenade" Scale="0.5" impactsoundtag="impact_metal_heavy">
+    <InventoryIcon texture="%ModDir%/Sprites/tricksterrig.png" sourcerect="465,160,47,52" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Sprites/tricksterrig.png" sourcerect="466,212,23,44" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Sprites/tricksterrig.png" name="tricksternadebroken" sourcerect="492,212,20,44" depth="0.55" origin="0.5,0.5" maxcondition="99.9" />
+    <Body width="36" height="56" density="30" friction="1.0" angulardamping="20.0" />
+    <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnBroken" target="This">
+          <ParticleEmitter particle="chemmist" particlespersecond="25" AngleMax="360" DistanceMax="50" VelocityMin="100" VelocityMax="150" ScaleMultiplier="2,2" ParticleAmount="2" ColorMultiplier="255,255,255,155" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" delay="60" >
+        <Remove/>
+      </StatusEffect>
+
+      <!-- Skip the removal of safeties and explode immediatly if inside of a detonator, railgun shell or a depth charge-->
+      <StatusEffect type="OnUse" targettype="This" Condition="0" setvalue="true" comparison="OR">
+        <Conditional HasTag="detonator" targetcontainer="true" />
+        <Conditional HasTag="railgunammo" targetcontainer="true" />
+        <Conditional HasTag="depthchargeammo" targetcontainer="true" />
+      </StatusEffect>
+      <!-- forcefully pull the pin if player hasnt done so -->
+      <StatusEffect type="OnSecondaryUse" target="This" disabledeltatime="true" checkconditionalalways="true">
+        <Conditional IsActive="false" targetitemcomponent="ItemComponent" />
+        <Use />
+      </StatusEffect>
+    </Throwable>
+    <!-- Activating the ItemComponent starts the timer -->
+    <ItemComponent IsActive="false" CharacterUsable="true">
+      <!--reduce condition by 1 to mark the user as the one responsible for the item breaking and exploding -->
+      <StatusEffect type="OnUse" targettype="This" IsActive="true" DontCleanUp="true" IsDangerous="true" comparison="AND" condition="-1">
+        <Conditional HasTag="neq detonator" targetcontainer="true" />
+        <Conditional HasTag="neq railgunammo" targetcontainer="true" />
+        <Conditional HasTag="neq depthchargeammo" targetcontainer="true" />
+        <Conditional IsActive="false" targetitemcomponent="ItemComponent" />
+            <ParticleEmitter particle="grenadepin" emitinterval="10" particleamount="1" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" copyentityangle="true" scalemin="0.5" scalemax="0.5" />
+            <ParticleEmitter particle="grenadelever" emitinterval="10" particleamount="1" anglemin="120" anglemax="210" velocitymin="100" velocitymax="200" copyentityangle="true" scalemin="0.5" scalemax="0.5" />
+        <Sound file="Content/Items/Weapons/pinpull.ogg" type="OnUse" range="720" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" targettype="This" Condition="-24">
+        <ParticleEmitter particle="chemmist" particlespersecond="10" AngleMax="360" DistanceMax="50" VelocityMin="100" VelocityMax="150" ScaleMultiplier="2,2" ParticleAmount="2" ColorMultiplier="255,255,255,155" />
+      </StatusEffect>
+
+      <StatusEffect type="OnUse" target="Character" >
+        <Affliction identifier="concealed" amount="100" />
+        <Affliction identifier="haste" amount="100" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+
+<Item name="" identifier="trickster_tagger">
+  <Sprite texture="%ModDir%/Sprites/tricksterrig.png" NonInteractable="True" sourcerect="466,212,23,44" depth="0.55" origin="0.5,0.5" />
+  <Holdable slots="Any,RightHand,LeftHand">
+    <StatusEffect Type="Always" targettype="Character">
+      <Affliction identifier="cultistmarker" />
+    </StatusEffect>
+    
+    <StatusEffect Type="Always" targettype="NearbyItems" Range="5" delay="0.3" settags="smallitem,handgrenade,weapon,ehaammo,stungunammo" />
+    <StatusEffect Type="Always" targettype="NearbyItems" Range="5" delay="0.2" settags="4510mag,45pistolammo" >
+      <Conditional HasTag="10mmpistolammo" />
+    </StatusEffect>
+    <StatusEffect Type="OnSpawn" targettype="This" delay="0.4" >
+      <Remove/>
+    </StatusEffect>
+    <StatusEffect Type="Always" targettype="NearbyItems" InvulnerableToDamage="True" setvalue="true" Range="5" delay="0.1" >
+      <Conditional HasTag="handgrenade" />
+    </StatusEffect>
+  </Holdable>
+</Item>
+
+</Items>

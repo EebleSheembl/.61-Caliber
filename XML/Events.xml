@@ -1,0 +1,18 @@
+<randomevents>
+<EventPrefabs>
+    <ScriptedEvent identifier="eebling" commonness="0">
+          <SpawnAction npcsetidentifier=".61caliber" npcidentifier="eeblesheembl" targettag="eeble" spawnlocation="Outpost" targetmoduletags="adminmodule" />
+          <NPCChangeTeamAction npctag="eeble" teamid="Team1" addtocrew="false"/>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="eeblingcrew" commonness="0">
+          <SpawnAction npcsetidentifier=".61caliber" npcidentifier="eeblesheembl" targettag="eeble" spawnlocation="Outpost" targetmoduletags="adminmodule" />
+          <NPCChangeTeamAction npctag="eeble" teamid="team1" addtocrew="true"/>
+    </ScriptedEvent>
+
+    <ScriptedEvent identifier="trader" commonness="0">
+          <SpawnAction npcsetidentifier=".61caliber" npcidentifier="trader" targettag="trader" spawnlocation="Outpost" targetmoduletags="crewmodule" />
+          <NPCChangeTeamAction npctag="trader" teamid="team1" addtocrew="true"/>
+    </ScriptedEvent>
+
+</EventPrefabs>
+</randomevents>

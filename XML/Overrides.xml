@@ -1,0 +1,87 @@
+<Override>
+<Items>
+    <Item name="Handcannon Round" description="A 15.5x50mmR cartridge that carries a massive amount of powder to propel the large projectile, which features an armor-piercing penetrator made from titanium alloy, capable of putting a hole through one mudraptors torso and still have enough power to decapitate another behind it." identifier="handcannonround" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,handcannonammo,pistolammoitem,handheldammo" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="secarmcab" />
+      <PreferredContainer primary="wrecksecarmcab" minamount="3" maxamount="12" spawnprobability="0.01" />
+      <PreferredContainer primary="abandonedsecarmcab" minamount="3" maxamount="12" spawnprobability="0.01" />
+      <PreferredContainer secondary="handcannon" minamount="6" spawnprobability="1.0" />
+      <Price baseprice="115" soldeverywhere="false">
+        <Price locationtype="outpost" sold="false" />
+        <Price locationtype="city" sold="false" />
+        <Price locationtype="research" sold="false" />
+        <Price locationtype="military" sold="false" />
+        <Price locationtype="mine" sold="false" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true" amount="6">
+        <RequiredSkill identifier="weapons" level="45" />
+        <RequiredItem identifier="flashpowder" />
+        <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" amount="2" />
+        <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
+        <RequiredItem identifier="titaniumaluminiumalloy" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="166,430,40,43" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Jobgear/TalentGear.png" sourcerect="3,118,24,9" depth="0.55" origin="0.5,0.5" />
+      <Body width="34" height="14" density="50" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" hitscan="true" maxtargetstohit="4" removeonhit="true">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,115,200" scalemultiplier="1,1" />
+        <Attack structuredamage="15" targetforce="15" itemdamage="65" severlimbsprobability="2" penetration="2">
+          <Affliction identifier="bleeding" strength="60" />
+          <Affliction identifier="blunttrauma" strength="8" />
+          <Affliction identifier="gunshotwound" strength="75" />
+          <Affliction identifier="stun" strength="1.5" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="6,6" colormultiplier="255,200,115,200" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.75" scalemax="1" />
+        </StatusEffect>
+      </Projectile>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+
+
+<Item name="" identifier="steel" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,petfood3,munition_core,advmunition_core,advmunition_tip,scrapcannonammo" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="storagecab" />
+    <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" minamount="1" maxamount="2" spawnprobability="0.05" />
+    <Price baseprice="28">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="7" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="10" />
+      <Price storeidentifier="merchantresearch" minavailable="6" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="15" />
+      <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="20" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredSkill identifier="mechanical" level="20" />
+      <RequiredItem identifier="carbon" />
+      <RequiredItem identifier="iron" amount="2" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="carbon" copycondition="true" />
+      <Item identifier="iron" copycondition="true" />
+    </Deconstruct>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="640,128,64,64" />
+    <Sprite texture="Content/Items/Materials/minerals.png" sourcerect="4,171,54,27" depth="0.55" origin="0.5,0.5" />
+    <Body width="50" height="25" density="30" />
+    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <!-- for scrap cannon FUUUUUUUCK YOU I'M NOT LETTING A CHUNK OF STEEL BE A FUCKING SHOTGUN SHELL RAHHHHHHHHHHHHHHHH-->
+    <Projectile characterusable="false" launchimpulse="15" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodeflective="false" sticktodoors="false" sticktolighttargets="false">
+      <Attack structuredamage="15" itemdamage="15" targetforce="50" severlimbsprobability="0.1">
+        <Affliction identifier="blunttrauma" strength="35" />
+        <Affliction identifier="bleeding" strength="35" />
+        <Affliction identifier="stun" strength="2" />
+      </Attack>
+    </Projectile>
+    <AiTarget sightrange="1000" static="true" />
+  </Item>
+
+</Items>
+</Override>

@@ -1,0 +1,58 @@
+<Override>
+<Talents>
+  <Talent identifier="bigguns">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,4" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.bigguns">
+      <Replace tag="[amount]" value="30" color="gui.green"/>
+    </Description>
+    <Description tag="talentdescription.reducedualwieldpenalty">
+      <Replace tag="[amount]" value="50" color="gui.green"/>
+    </Description>
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.handcannon, entityname.handcannonround" color="gui.orange"/>
+    </Description>
+    <AddedRecipe itemidentifier="61caliberhandcannon"/>
+    <AddedRecipe itemidentifier="61caliberhandcannonround"/>
+    <AddedRecipe itemidentifier="61calibercorpralcoin"/>
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionCharacter targettypes="Enemy,Monster" />
+        <AbilityConditionAttackData tags="pistolammoitem"/>
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="0.3" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="DualWieldingPenaltyReduction" value="0.5"/>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  
+  <Talent identifier="inspirationalleader">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,1" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.appliestoallcrew"/>
+    <Description tag="talentdescription.additionalstattype">
+      <Replace tag="[amount]" value="25" color="gui.green"/>
+      <Replace tag="[stattype]" value="stattypenames.skillgainspeed" color="gui.orange"/>
+    </Description>
+    <AbilityGroupInterval interval="0.9">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies allowself="true">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+              <Affliction identifier="inspirationalleader" strength="1.0"/>
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+    <AddedRecipe itemidentifier="cigar"/>
+    <AddedRecipe itemidentifier="61caliberdementoniteblunt"/>
+    <AddedRecipe itemidentifier="61caliberEebleRobes"/>
+    <AddedRecipe itemidentifier="eebleseppie"/>
+  </Talent>
+
+</Talents>
+</Override>

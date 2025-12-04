@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Jobs>
+
+  <!--sneaky bandit trickster-->
+  <Job identifier="bandit_trickster" onlyjobspecificdialog="false" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true" uicolor="0.87,0.38,0.33">
+    <Jobicon>
+      <sprite texture="Content/UI/MainIconsAtlas.png" sourcerect="256,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="85,95" primary="true" />
+      <Skill identifier="medical" level="45,55" />
+      <Skill identifier="mechanical" level="25,35" />
+      <Skill identifier="electrical" level="25,35" />
+      <Skill identifier="helm" level="25,45" />
+    </Skills>
+    <ItemSet>
+      <!--clothes+armor-->
+      <Item identifier="idcard" equip="true" />
+      <Item identifier="headset" equip="true" />
+      <Item identifier="invishelmet" equip="true" />
+      <Item identifier="tricksterrig" equip="true" />
+      <Item identifier="trickstersbandolier" equip="true" >
+        <Item identifier="antibleeding1" amount="8" />
+        <Item identifier="deusizine" amount="3" />
+        <Item identifier="hyperzine" amount="8" />
+        <Item identifier="stypticpowder" amount="8" />
+        <Item identifier="stungun" > 
+          <Item identifier="feniterglround1" Tags="stungunammo" />
+        </Item>
+        <Item identifier="sgt_binoculars"/>
+      </Item>
+      <!--weapons-->
+      <Item identifier="scp_welrod" />
+      <Item identifier="sgt_10mmmagacid" />
+      <Item identifier="scp_crowbar" />
+      <!--gear-->
+      <Item identifier="radiojammer" >
+        <Item identifier="fulguriumbatterycell" NonInteractable="True" />
+      </Item>
+      <Item identifier="scp_armykit" />
+      <Item identifier="sgt_toolbox">
+        <Item identifier="fraggrenade" amount="8" />
+        <Item identifier="stungrenade" amount="4" />
+        <Item identifier="sgt_gravgrenade" amount="2" />
+        <Item identifier="timeddetonator">
+          <Item identifier="scp_nuclearbomb" />
+        </Item>
+      </Item>
+      <Item identifier="trickster_tagger" />
+      <Item identifier="husk_giver" />
+    </ItemSet>
+  </Job>
+
+</Jobs>

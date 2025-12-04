@@ -1,0 +1,65 @@
+<npcsets>
+<npcset identifier=".61caliber">
+    <npc identifier="eeblesheembl" job="captain" moduleflags="none" behavior="Passive">
+      <Character speciesname="human" gender="female" headspriteid="7" hairindex="2" beardindex="0" moustacheindex="0" faceattachmentindex="11" skincolor="252,225,198,255" haircolor="103,31,118,255" facialhaircolor="255,255,255,255" personality="crazy">
+      <job name="Eeble" identifier="captain">
+      <Skill identifier="weapons" level="100" primary="true" />
+      <Skill identifier="medical" level="100" />
+      <Skill identifier="mechanical" level="100" />
+      <Skill identifier="electrical" level="100" />
+      <Skill identifier="helm" level="100" />
+        </job>
+      </Character>
+     <ItemSet>
+        <Item identifier="61caliberdementoniteblunt" equip="false" />
+        <Item identifier="61caliberEebleRobes" equip="true" />
+        <Item identifier="EebleHat" equip="true" />
+        <Item identifier="EebleSlamSuit" equip="true" />
+        <Item identifier="idcard" equip="true" showpreview="false"/>
+        <Item identifier="malicioussphere"/>
+        <Item identifier="reversedsphere"/>
+        <Item identifier="handcannon" equip="false">
+         <Item identifier="handcannonround"/>
+         <Item identifier="handcannonround"/>
+         <Item identifier="handcannonround"/>
+         <Item identifier="handcannonround"/>
+         <Item identifier="handcannonround"/>
+         <Item identifier="handcannonround"/>
+        </Item>
+        <Item identifier="handcannonround" amount="24" />
+     </ItemSet>
+    </npc>
+
+
+    <npc identifier="trader" job="assistant" moduleflags="none" behavior="Passive">
+      <Character speciesname="human" gender="male" headspriteid="3" hairindex="1" beardindex="0" moustacheindex="0" faceattachmentindex="0" skincolor="83,45,18,255" haircolor="73,78,85,255" facialhaircolor="222,215,204,255" personality="crazy">
+      <job name="Trader" identifier="captain">
+      <Skill identifier="weapons" level="100" primary="true" />
+      <Skill identifier="medical" level="100" />
+      <Skill identifier="mechanical" level="100" />
+      <Skill identifier="electrical" level="100" />
+      <Skill identifier="helm" level="100" />
+      </job>
+      </Character>
+     <ItemSet>
+        <Item identifier="crewchiefclothes" equip="true" />
+        <Item identifier="captainscap1" equip="true" />
+        <Item identifier="pucs" equip="true" >
+          <Item identifier="oxygenitetank"/>
+        </Item>
+        <Item identifier="idcard" equip="true" showpreview="false"/>
+        <Item identifier="cargoscooter" equip="true" showpreview="false"/>
+        <Item identifier="shotgun" equip="false">
+         <Item identifier="shotgunshell"/>
+         <Item identifier="shotgunshell"/>
+         <Item identifier="shotgunshell"/>
+         <Item identifier="shotgunshell"/>
+         <Item identifier="shotgunshell"/>
+         <Item identifier="shotgunshell"/>
+        </Item>
+        <Item identifier="shotgunshell" amount="24" />
+     </ItemSet>
+    </npc>
+</npcset>
+
+</npcsets>

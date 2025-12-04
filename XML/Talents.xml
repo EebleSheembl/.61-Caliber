@@ -1,0 +1,15 @@
+<Talents>
+
+  <Talent identifier="Eeble">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,1" sheetelementsize="128,128"/>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="WalkingSpeed" value="0.5"/>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AddedRecipe itemidentifier="61caliberdementoniteblunt"/>
+    <AddedRecipe itemidentifier="61caliberEebleRobes"/>
+    <AddedRecipe itemidentifier="eebleseppie"/>
+  </Talent>
+
+</Talents>
